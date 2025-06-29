@@ -3,18 +3,18 @@
 | **ASIGNATURA:** Aplicaciones Distribuidas    | **NIVEL:** 7to           | **FECHA:** 28/06/2025     |
 | **DOCENTE:** Ing. Paulo Galarza              | **PRÁCTICA N°:** 1       | **CALIFICACIÓN:**         |
 
-**Repositorio GitHub:** [https://github.com/melanymoreira/espe-mongoose.git](https://github.com/melanymoreira/espe-mongoose.git)
+**Repositorio GitHub:** [https://github.com/gregoryNa9/Laboratorio1U2.git](https://github.com/gregoryNa9/Laboratorio1U2.git)
 
 # Implementación de una API RESTful con Node.js, Express y MongoDB usando Mongoose
 
 **Nombre del estudiante:**  
-Melany Rosmery Moreira Zambrano
+Karlos Gregory CHevez Bazan
 
 ---
 
 ## RESUMEN
 
-En esta práctica se desarrolló un sistema de gestión de cursos mediante una API RESTful utilizando Node.js, Express y MongoDB, empleando el ORM Mongoose para la administración eficiente de los datos. El sistema permite crear, consultar, actualizar y eliminar cursos, facilitando la gestión académica. Se estructuró el proyecto siguiendo buenas prácticas de desarrollo, separando modelos, rutas y controladores para mejorar la mantenibilidad. Además, se utilizó Docker para desplegar la base de datos y mongo-express para su administración visual. Las pruebas de los endpoints se realizaron con Postman, comprobando la correcta funcionalidad del sistema. El uso de Mongoose simplificó la interacción con la base de datos, permitiendo validaciones y modelado de datos de manera sencilla. Se concluyó que el uso de un ORM aporta ventajas significativas frente a las consultas nativas, mejorando la productividad y la seguridad del desarrollo.
+En esta práctica se desarrolló un sistema de gestión de cursos utilizando una API RESTful implementada con Node.js, Express y MongoDB. Se aplicó el ODM Mongoose para modelar los datos, definir validaciones y facilitar las operaciones sobre la base de datos. Además, se empleó Docker y docker-compose para orquestar servicios de base de datos y administración visual con mongo-express. Las pruebas funcionales se realizaron mediante Postman, asegurando el correcto funcionamiento de los endpoints CRUD. Se trabajó de forma modular, organizando el código por modelos, controladores y rutas. Este enfoque permitió una mayor escalabilidad, mantenibilidad y seguridad. Se concluyó que el uso de un ORM y herramientas de contenedorización optimiza el flujo de desarrollo y despliegue en proyectos backend.
 
 **Palabras Claves:** API REST, Mongoose, MongoDB
 
@@ -22,44 +22,59 @@ En esta práctica se desarrolló un sistema de gestión de cursos mediante una A
 
 ## 1. INTRODUCCIÓN
 
-El objetivo de esta práctica fue implementar una API RESTful para la gestión de cursos, aplicando el uso de un ORM (Mongoose) para interactuar con MongoDB. Se enfatizó la importancia de la organización del código y el uso de herramientas modernas como Docker para el despliegue de servicios. La práctica permitió afianzar conocimientos sobre el desarrollo backend y el manejo disciplinado de recursos en el laboratorio.
+La presente práctica tuvo como finalidad la implementación de una API RESTful para gestionar información de cursos, desarrollando habilidades en programación backend y administración de bases de datos. Se emplearon herramientas modernas como Docker y mongo-express, promoviendo el uso disciplinado del entorno de laboratorio y reforzando el manejo de arquitectura distribuida. Esta experiencia permitió aplicar los conceptos vistos en clase y afianzar buenas prácticas de desarrollo, estructura de código y pruebas funcionales de servicios web.
 
 ---
 
 ## 2. OBJETIVO(S)
 
-2.1 Desarrollar una API RESTful organizada y funcional utilizando Node.js, Express y MongoDB.  
-2.2 Aplicar el uso de Mongoose como ORM para la gestión eficiente de datos.  
-2.3 Desplegar servicios de base de datos y administración usando Docker.
+2.1 Desarrollar una API RESTful organizada utilizando Node.js y Express.  
+2.2 Aplicar Mongoose como ODM para la gestión de datos con MongoDB.  
+2.3 Desplegar servicios mediante Docker y administrar la base de datos con mongo-express.
+2.4 Validar el funcionamiento de la API mediante pruebas con Postman.
 
 ---
 
 ## 3. MARCO TEÓRICO
 
-Un ORM (Object Relational Mapping) como Mongoose permite mapear documentos de MongoDB a objetos de JavaScript, facilitando la validación, consulta y manipulación de datos. A diferencia de las consultas nativas, el ORM proporciona abstracción, validación automática y mayor seguridad, reduciendo la posibilidad de errores y mejorando la mantenibilidad del código.
+Una API RESTful permite exponer recursos y operaciones a través de endpoints HTTP. Su estructura sigue principios de arquitectura como statelessness, manipulación de recursos mediante URIs y uso de métodos estándar (GET, POST, PUT, DELETE). Express es un framework de Node.js que facilita la creación de estas APIs mediante enrutamiento flexible y middlewares. MongoDB, al ser una base de datos NoSQL orientada a documentos, permite mayor flexibilidad en la estructura de los datos. 
+Mongoose es un ODM (Object Data Modeling) para MongoDB y Node.js, que facilita la creación de esquemas, validaciones, y consultas estructuradas, mejorando la organización del código y la seguridad. Por su parte, Docker permite encapsular servicios en contenedores, mientras que docker-compose facilita la orquestación de múltiples servicios, como bases de datos y clientes de administración como mongo-express.
 
 ---
 
 ## 4. DESCRIPCIÓN DEL PROCEDIMIENTO
 
+---
+Se inició creando la estructura básica del proyecto con carpetas separadas para modelos, rutas y controladores. Se configuró un archivo .env para el manejo seguro de variables de entorno. Posteriormente, se desarrollaron los modelos en Mongoose y se construyeron los endpoints CRUD de la API usando Express.
+Para el entorno de ejecución se usó Docker, con un archivo docker-compose.yml que definió dos contenedores: uno para MongoDB y otro para mongo-express. Se realizaron pruebas de cada endpoint en Postman para asegurar su correcto funcionamiento. Finalmente, se capturaron evidencias visuales del proceso en cada etapa.
+---
+
 - Se creó la estructura del proyecto separando modelos, rutas y controladores.
 - Se configuró el archivo `.env` para manejar variables sensibles.
 - Se implementó el archivo `docker-compose.yml` para levantar MongoDB y mongo-express.
-- Se desarrollaron los endpoints CRUD para el recurso "curso".
-- Se realizaron pruebas de los endpoints usando Postman.
-- Se documentó el proceso y los resultados obtenidos.
+- Se desarrollaron los endpoints CRUD para el recurso "curso" con lo cual se realizo pruebas de los endpoints usando Postman.
 
 ---
 
 ## 5. ANÁLISIS DE RESULTADOS
 
-Se logró implementar correctamente la API, verificando el funcionamiento de los endpoints mediante Postman. Los datos se almacenaron y consultaron exitosamente en MongoDB. El uso de Mongoose simplificó la validación y el modelado de los datos, permitiendo un desarrollo más ágil y seguro. Se observó que la estructura modular facilita la escalabilidad y el mantenimiento del proyecto.
+Durante las pruebas, se comprobó que todos los endpoints funcionaban correctamente:
+
+- En la Figura 1, se muestra la creación exitosa de un curso mediante POST (ingresarCurso.png).
+- La Figura 2 refleja la consulta de cursos ya registrados (obtenerCurso.png).
+- La Figura 3 presenta la actualización de un curso mediante PUT (actualizarCurso.png).
+- En la Figura 4, se observa la eliminación del recurso (eliminarCurso.png).
+- La Figura 5 evidencia que el curso ya no se encuentra tras la eliminación (obtenerCurso PostEliminar.png).
+- En la Figura 6, se muestra la interfaz general de mongo-express (mongo-express.png).
+- Las Figuras 7 y 8 muestran el acceso a la colección courses y el detalle de un documento dentro de mongo-express (mongo-express1.png, mongo-express2.png).
+
+Estas evidencias confirman la operatividad completa del sistema implementado.
+
+
 
 ---
 
 ## 6. GRÁFICOS O FOTOGRAFÍAS
-
-A continuación, se presentan capturas de pantalla del funcionamiento del proyecto:
 
 **Creación de un curso en Postman:**  
 ![POST /course](src/img/ingresarCurso.png)
@@ -73,23 +88,32 @@ A continuación, se presentan capturas de pantalla del funcionamiento del proyec
 **Eliminar cursos en Postman:**  
 ![DELETE /course](src/img/eliminarCurso.png)
 
-**Interfaz de mongo-express:**  
+**Consulta después de la eliminación:**  
+![GET /course](src/img/obtenerCurso%20PostEliminar.png)
+
+**Interfaz general de mongo-express:**  
 ![mongo-express](src/img/mongo-express.png)
+
+**Vista de la colección `courses` en mongo-express:**  
+![mongo-express1](src/img/mongo-express1.png)
+
+**Detalle de un documento en mongo-express:**  
+![mongo-express2](src/img/mongo-express2.png)
 
 ---
 
 ## 7. DISCUSIÓN
 
-El uso de Mongoose como ORM demostró ser ventajoso frente a las consultas nativas, ya que permite definir esquemas, realizar validaciones y manejar relaciones de manera sencilla. Además, la integración con Docker facilitó el despliegue y la administración de la base de datos. La estructura modular del proyecto contribuyó a una mejor organización y comprensión del código.
+Los resultados obtenidos coinciden con los principios del desarrollo backend moderno. El uso de Mongoose facilitó la definición clara de estructuras de datos y sus respectivas validaciones. Asimismo, la aplicación de Docker permitió una configuración rápida y efectiva del entorno de ejecución, reduciendo el margen de errores de instalación o versiones.
+Se evidenció que al seguir una estructura modular y ordenada en el proyecto, el mantenimiento, comprensión y escalabilidad del mismo se facilita significativamente. Las herramientas utilizadas demostraron ser adecuadas para este tipo de desarrollos y resultan altamente recomendables para futuros proyectos similares.
 
 ---
 
 ## 8. CONCLUSIONES
 
-- El uso de un ORM como Mongoose agiliza el desarrollo y mejora la calidad del código.
-- Docker simplifica la gestión de servicios y dependencias en el entorno de desarrollo.
-- La organización modular del proyecto facilita su mantenimiento y escalabilidad.
-- Las pruebas con Postman permitieron validar el correcto funcionamiento de la API.
+- La implementación de la API RESTful con Node.js, Express y Mongoose permitió desarrollar un sistema funcional y bien estructurado, cumpliendo con los objetivos planteados en la práctica.
+- El uso de Docker y mongo-express facilitó la configuración del entorno y la administración visual de la base de datos, demostrando la utilidad de estas herramientas en proyectos distribuidos.
+- Las pruebas con Postman y la estructura modular del código validaron el correcto funcionamiento del sistema, reforzando buenas prácticas de desarrollo backend.
 
 ---
 

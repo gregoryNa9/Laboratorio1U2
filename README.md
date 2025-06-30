@@ -1,9 +1,10 @@
 | **DEPARTAMENTO:** Ciencias de la Computación | **CARRERA:** Ingeniería en Tecnologías de la Información |
 |----------------------------------------------|----------------------------------------------------------|
 | **ASIGNATURA:** Aplicaciones Distribuidas    | **NIVEL:** 7to           | **FECHA:** 28/06/2025     |
-| **DOCENTE:** Ing. Paulo Galarza              | **PRÁCTICA N°:** 1       | **CALIFICACIÓN:**         |
+| **DOCENTE:** Ing. Paulo Galarza              | **PRÁCTICA N°:** 2       | **CALIFICACIÓN:**         |
 
-**Repositorio GitHub:** [https://github.com/gregoryNa9/Laboratorio1U2.git](https://github.com/gregoryNa9/Laboratorio1U2.git)
+**Repositorio GitHub:** [https://github.com/gregoryNa9/Laboratorio1U2/tree/laboratorio2](https://github.com/gregoryNa9/Laboratorio1U2.git)
+
 
 # Implementación de una API RESTful con Node.js, Express y MongoDB usando Mongoose
 
@@ -14,111 +15,163 @@ Karlos Gregory CHevez Bazan
 
 ## RESUMEN
 
-En esta práctica se desarrolló un sistema de gestión de cursos utilizando una API RESTful implementada con Node.js, Express y MongoDB. Se aplicó el ODM Mongoose para modelar los datos, definir validaciones y facilitar las operaciones sobre la base de datos. Además, se empleó Docker y docker-compose para orquestar servicios de base de datos y administración visual con mongo-express. Las pruebas funcionales se realizaron mediante Postman, asegurando el correcto funcionamiento de los endpoints CRUD. Se trabajó de forma modular, organizando el código por modelos, controladores y rutas. Este enfoque permitió una mayor escalabilidad, mantenibilidad y seguridad. Se concluyó que el uso de un ORM y herramientas de contenedorización optimiza el flujo de desarrollo y despliegue en proyectos backend.
+En esta práctica se desarrolló un sistema completo para la gestión de cursos utilizando una arquitectura basada en servicios. Se implementó una API RESTful con Node.js, Express y MongoDB utilizando Mongoose como ODM. Posteriormente, se creó una aplicación frontend en React encargada de consumir esta API, permitiendo visualizar la información en una interfaz web. Además, se configuraron contenedores Docker para el manejo de la base de datos y su interfaz de administración mongo-express. Todo el flujo fue probado y documentado, desde la creación de recursos hasta su representación gráfica. Esta integración frontend-backend permitió consolidar conocimientos sobre aplicaciones distribuidas.
 
-**Palabras Claves:** API REST, Mongoose, MongoDB
+**Palabras Claves:** API REST, Axios, MongoDB
 
 ---
 
 ## 1. INTRODUCCIÓN
 
-La presente práctica tuvo como finalidad la implementación de una API RESTful para gestionar información de cursos, desarrollando habilidades en programación backend y administración de bases de datos. Se emplearon herramientas modernas como Docker y mongo-express, promoviendo el uso disciplinado del entorno de laboratorio y reforzando el manejo de arquitectura distribuida. Esta experiencia permitió aplicar los conceptos vistos en clase y afianzar buenas prácticas de desarrollo, estructura de código y pruebas funcionales de servicios web.
+El objetivo general de este laboratorio fue construir una aplicación distribuida basada en servicios RESTful. Para ello se desarrolló una API que interactúa con MongoDB, y una aplicación frontend en React que realiza las peticiones necesarias para obtener y mostrar los datos. El consumo de la API se realizó utilizando Axios, permitiendo una integración eficiente entre el cliente y el servidor. Esta experiencia permitió aplicar conocimientos tanto de desarrollo backend como de integración frontend, además de fortalecer el uso de herramientas como Docker y Postman.
 
 ---
 
 ## 2. OBJETIVO(S)
 
-2.1 Desarrollar una API RESTful organizada utilizando Node.js y Express.  
-2.2 Aplicar Mongoose como ODM para la gestión de datos con MongoDB.  
-2.3 Desplegar servicios mediante Docker y administrar la base de datos con mongo-express.
-2.4 Validar el funcionamiento de la API mediante pruebas con Postman.
+2.1 Implementar un servidor backend con Node.js, Express y MongoDB.  
+2.2 Consumir la API desde un cliente web construido en React.  
+2.3 Utilizar Axios para realizar peticiones HTTP desde el frontend.  
+2.4 Validar el flujo completo de datos con pruebas funcionales y visualización en una interfaz.  
 
 ---
 
 ## 3. MARCO TEÓRICO
 
-Una API RESTful permite exponer recursos y operaciones a través de endpoints HTTP. Su estructura sigue principios de arquitectura como statelessness, manipulación de recursos mediante URIs y uso de métodos estándar (GET, POST, PUT, DELETE). Express es un framework de Node.js que facilita la creación de estas APIs mediante enrutamiento flexible y middlewares. MongoDB, al ser una base de datos NoSQL orientada a documentos, permite mayor flexibilidad en la estructura de los datos. 
+Una API RESTful es una interfaz de comunicación que permite el acceso a recursos mediante métodos HTTP. En este contexto, se emplea Express como framework web minimalista para Node.js, y Mongoose como herramienta para interactuar con MongoDB de forma estructurada, definiendo esquemas y validaciones. En el frontend, React permite construir interfaces reactivas, mientras que Axios facilita la realización de peticiones HTTP. Juntas, estas tecnologías permiten desarrollar aplicaciones completas bajo un enfoque distribuido, en el que el frontend y backend se comunican a través de servicios bien definidos.
 Mongoose es un ODM (Object Data Modeling) para MongoDB y Node.js, que facilita la creación de esquemas, validaciones, y consultas estructuradas, mejorando la organización del código y la seguridad. Por su parte, Docker permite encapsular servicios en contenedores, mientras que docker-compose facilita la orquestación de múltiples servicios, como bases de datos y clientes de administración como mongo-express.
+Las aplicaciones distribuidas modernas suelen basarse en arquitecturas cliente-servidor, donde el frontend y el backend están desacoplados y se comunican mediante APIs. Una API RESTful (Representational State Transfer) es una interfaz que utiliza los métodos HTTP estándar (GET, POST, PUT, DELETE) para permitir la manipulación y consulta de recursos de manera sencilla, escalable y estandarizada.
+En este proyecto, se utilizó:
+- **Express.js**: un framework minimalista para Node.js que facilita la creación de servidores web y APIs REST, manejando rutas, middleware y controladores con gran flexibilidad y rendimiento.
+- **Mongoose**: una librería ODM (Object Data Modeling) para MongoDB que permite definir esquemas, modelos y validaciones para la base de datos NoSQL, proporcionando una capa de abstracción para interactuar con documentos JSON.
+- **MongoDB**: base de datos orientada a documentos, ideal para almacenar datos flexibles y escalables, usada aquí como backend persistente para los cursos.
+- **Docker y docker-compose**: herramientas para contenerización que permiten crear entornos aislados y reproducibles, simplificando el despliegue y la gestión de servicios como MongoDB y mongo-express.
+- **React**: biblioteca frontend para construir interfaces de usuario reactivas y modulares, utilizando componentes que responden a cambios de estado y eventos de usuario.
+- **Axios**: cliente HTTP basado en promesas que facilita la comunicación con la API REST, manejando solicitudes asincrónicas desde el frontend para consumir y modificar recursos.
+Esta combinación tecnológica asegura una aplicación con separación clara de responsabilidades, escalabilidad, y mantenibilidad, alineada con prácticas modernas de desarrollo web.
+
+---
 
 ---
 
 ## 4. DESCRIPCIÓN DEL PROCEDIMIENTO
 
 ---
-Se inició creando la estructura básica del proyecto con carpetas separadas para modelos, rutas y controladores. Se configuró un archivo .env para el manejo seguro de variables de entorno. Posteriormente, se desarrollaron los modelos en Mongoose y se construyeron los endpoints CRUD de la API usando Express.
-Para el entorno de ejecución se usó Docker, con un archivo docker-compose.yml que definió dos contenedores: uno para MongoDB y otro para mongo-express. Se realizaron pruebas de cada endpoint en Postman para asegurar su correcto funcionamiento. Finalmente, se capturaron evidencias visuales del proceso en cada etapa.
+El desarrollo se llevó a cabo en varias fases, siguiendo buenas prácticas para el diseño y la implementación de una API RESTful con un frontend React:
+
+1. **Estructuración del backend:**
+   - Se creó una estructura de carpetas clara para organizar el código: `models` para esquemas Mongoose, `controllers` para la lógica de negocio y `routes` para definir las rutas HTTP.
+   - Se definió el modelo `Course` en Mongoose, especificando los campos necesarios con sus tipos y validaciones (por ejemplo, nombre, descripción, duración).
+   - Se implementaron los endpoints RESTful:  
+     - `GET /api/courses`: para obtener la lista de cursos.  
+     - `POST /api/courses`: para crear un nuevo curso.  
+     - `PUT /api/courses/:id`: para actualizar un curso existente.  
+     - `DELETE /api/courses/:id`: para eliminar un curso.  
+   - Cada controlador manejó la interacción con MongoDB usando Mongoose, asegurando manejo de errores y respuestas JSON apropiadas.
+
+2. **Configuración de entorno con Docker:**
+   - Se configuró un archivo `docker-compose.yml` para levantar un contenedor de MongoDB y otro de `mongo-express` (interfaz web para administración).
+   - Se validó que ambos servicios estuvieran activos y accesibles, facilitando la inspección y manipulación directa de la base de datos.
+
+3. **Desarrollo del frontend:**
+   - Se creó la aplicación React utilizando `create-react-app` para una configuración inicial rápida y estandarizada.
+   - Se implementó un servicio con Axios para encapsular las llamadas HTTP a la API `/api/courses`.
+   - Se desarrolló el componente `ListaCursos.js` que:
+     - Consume la API para obtener y mostrar la lista de cursos.  
+     - Permite crear, actualizar y eliminar cursos desde la interfaz.  
+     - Actualiza el estado React para reflejar los cambios sin recargar la página.
+
+4. **Pruebas y validación:**
+   - Se usó Postman para probar manualmente los endpoints CRUD, verificando que respondieran correctamente con datos válidos y manejaran errores.
+   - Se realizaron pruebas visuales en el navegador, validando la correcta integración y presentación de los datos.
+   - Se documentaron los resultados con capturas de pantalla para evidenciar cada operación y su efecto en la base de datos.
+
 ---
 
-- Se creó la estructura del proyecto separando modelos, rutas y controladores.
-- Se configuró el archivo `.env` para manejar variables sensibles.
-- Se implementó el archivo `docker-compose.yml` para levantar MongoDB y mongo-express.
-- Se desarrollaron los endpoints CRUD para el recurso "curso" con lo cual se realizo pruebas de los endpoints usando Postman.
-
----
 
 ## 5. ANÁLISIS DE RESULTADOS
 
-Durante las pruebas, se comprobó que todos los endpoints funcionaban correctamente:
+Durante el desarrollo y las pruebas, se obtuvieron resultados positivos que confirman la funcionalidad del sistema:
 
-- En la Figura 1, se muestra la creación exitosa de un curso mediante POST (ingresarCurso.png).
-- La Figura 2 refleja la consulta de cursos ya registrados (obtenerCurso.png).
-- La Figura 3 presenta la actualización de un curso mediante PUT (actualizarCurso.png).
-- En la Figura 4, se observa la eliminación del recurso (eliminarCurso.png).
-- La Figura 5 evidencia que el curso ya no se encuentra tras la eliminación (obtenerCurso PostEliminar.png).
-- En la Figura 6, se muestra la interfaz general de mongo-express (mongo-express.png).
-- Las Figuras 7 y 8 muestran el acceso a la colección courses y el detalle de un documento dentro de mongo-express (mongo-express1.png, mongo-express2.png).
+- La comunicación entre el frontend React y la API RESTful a través de Axios fue estable y eficiente, permitiendo un flujo de datos dinámico y en tiempo real.
+- La interfaz de usuario muestra correctamente la lista de cursos almacenados en MongoDB y permite realizar operaciones CRUD con retroalimentación inmediata.
+- Mongoose facilitó la definición de esquemas y validaciones para garantizar la integridad de los datos en la base.
+- Docker permitió el despliegue rápido y aislado de MongoDB y mongo-express, facilitando el control y monitoreo de la base de datos.
+- Las pruebas en Postman confirmaron el correcto funcionamiento de los métodos `GET`, `POST`, `PUT` y `DELETE`.
 
-Estas evidencias confirman la operatividad completa del sistema implementado.
+A continuación se presentan evidencias visuales que reflejan y validan cada fase del desarrollo, desde las operaciones realizadas con la API hasta la interacción con la base de datos y la interfaz de usuario.
 
+- `enterCourse.png` y `insertCourse.png` muestran la creación de cursos mediante Postman.
+- `getCourse.png` y `getCourse Post Delete.png` evidencian la consulta de cursos antes y después de eliminar registros.
+- `updateCourse.png` muestra la actualización de un curso.
+- `deleteCourse.png` ilustra la eliminación de un curso.
+- `login.png` y `register.png` corresponden a las interfaces de autenticación y registro de usuarios.
+- `mongo-express.png`, `mongo-express1.png`, `mongo-express2.png` y `mongo-express3.png` exhiben la interfaz y la gestión de la base de datos desde mongo-express.
+- `course.png` presenta la vista detallada de un curso en la interfaz React.
 
-
+---
 ---
 
 ## 6. GRÁFICOS O FOTOGRAFÍAS
 
-**Creación de un curso en Postman:**  
-![POST /course](src/img/ingresarCurso.png)
+**Creación y entrada de cursos:**  
+![enterCourse](src/img/enterCourse.png)  
+![insertCourse](src/img/insertCourse.png)  
 
-**Consulta de cursos en Postman:**  
-![GET /course](src/img/obtenerCurso.png)
+**Consulta de cursos (antes y después de eliminación):**  
+![getCourse](src/img/getCourse.png)  
+![getCourse Post Delete](src/img/getCourse%20Post%20Delete.png)  
 
-**Actualizar cursos en Postman:**  
-![PUT /course](src/img/actualizarCurso.png)
+**Actualización de curso:**  
+![updateCourse](src/img/updateCourse.png)  
 
-**Eliminar cursos en Postman:**  
-![DELETE /course](src/img/eliminarCurso.png)
+**Eliminación de curso:**  
+![deleteCourse](src/img/deleteCourse.png)  
 
-**Consulta después de la eliminación:**  
-![GET /course](src/img/obtenerCurso%20PostEliminar.png)
+**Interfaz de login:**  
+![login](src/img/login.png)  
+
+**Registro de usuario:**  
+![register](src/img/register.png)  
 
 **Interfaz general de mongo-express:**  
-![mongo-express](src/img/mongo-express.png)
+![mongo-express](src/img/mongo-express.png)  
 
 **Vista de la colección `courses` en mongo-express:**  
-![mongo-express1](src/img/mongo-express1.png)
+![mongo-express1](src/img/mongo-express1.png)  
 
 **Detalle de un documento en mongo-express:**  
-![mongo-express2](src/img/mongo-express2.png)
+![mongo-express2](src/img/mongo-express2.png)  
+
+**Vista adicional mongo-express:**  
+![mongo-express3](src/img/mongo-express3.png)  
+
+**Vista detallada del curso en frontend React:**  
+![course](src/img/course.png)  
 
 ---
 
+
 ## 7. DISCUSIÓN
 
-Los resultados obtenidos coinciden con los principios del desarrollo backend moderno. El uso de Mongoose facilitó la definición clara de estructuras de datos y sus respectivas validaciones. Asimismo, la aplicación de Docker permitió una configuración rápida y efectiva del entorno de ejecución, reduciendo el margen de errores de instalación o versiones.
-Se evidenció que al seguir una estructura modular y ordenada en el proyecto, el mantenimiento, comprensión y escalabilidad del mismo se facilita significativamente. Las herramientas utilizadas demostraron ser adecuadas para este tipo de desarrollos y resultan altamente recomendables para futuros proyectos similares.
+La integración de React con un backend en Node.js mediante Axios permitió desarrollar una aplicación web dinámica y funcional, con una arquitectura clara basada en API RESTful. Mongoose facilitó el manejo estructurado de los datos en MongoDB, mientras que herramientas como Postman y mongo-express apoyaron en la validación y visualización del flujo de información. El uso de Docker simplificó el despliegue del entorno, asegurando portabilidad y aislamiento de los servicios. En conjunto, estas tecnologías demostraron ser eficaces para construir aplicaciones distribuidas modernas, aplicando buenas prácticas de desarrollo web.
+
+---
 
 ---
 
 ## 8. CONCLUSIONES
 
-- La implementación de la API RESTful con Node.js, Express y Mongoose permitió desarrollar un sistema funcional y bien estructurado, cumpliendo con los objetivos planteados en la práctica.
-- El uso de Docker y mongo-express facilitó la configuración del entorno y la administración visual de la base de datos, demostrando la utilidad de estas herramientas en proyectos distribuidos.
-- Las pruebas con Postman y la estructura modular del código validaron el correcto funcionamiento del sistema, reforzando buenas prácticas de desarrollo backend.
+- La arquitectura cliente-servidor implementada con API RESTful permitió una comunicación fluida y eficiente entre el frontend en React y el backend en Node.js, garantizando una experiencia de usuario dinámica.
+- El uso combinado de Mongoose y MongoDB facilitó la definición, validación y persistencia estructurada de los datos, asegurando integridad y coherencia en las operaciones CRUD.
+- La integración de Docker simplificó significativamente la configuración y despliegue de los servicios, demostrando la utilidad de entornos aislados para el desarrollo y pruebas de sistemas distribuidos.
 
 ---
 
 ## 9. BIBLIOGRAFÍA
 
-- MongoDB, Inc. (2024). [MongoDB Manual](https://docs.mongodb.com/). Consulta: 28/06/2025.
-- Express.js Foundation. (2024). [Express Documentation](https://expressjs.com/). Consulta: 28/06/2025.
-- Automattic. (2024). [Mongoose Documentation](https://mongoosejs.com/docs/). Consulta: 28/06/2025.
+- MongoDB, Inc. (2024). [MongoDB Manual](https://docs.mongodb.com/). Consulta: 28/06/2025.  
+- Express.js Foundation. (2024). [Express Documentation](https://expressjs.com/). Consulta: 28/06/2025.  
+- Automattic. (2024). [Mongoose Documentation](https://mongoosejs.com/docs/). Consulta: 28/06/2025.  
+- Meta Platforms, Inc. (2024). [React Documentation](https://reactjs.org/docs/getting-started.html). Consulta: 28/06/2025.  
+- Axios (2024). [Axios GitHub](https://github.com/axios/axios). Consulta: 28/06/2025.

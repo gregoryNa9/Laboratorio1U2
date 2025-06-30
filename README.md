@@ -114,25 +114,36 @@ A continuación se presentan evidencias visuales que reflejan y validan cada fas
 
 ## 6. GRÁFICOS O FOTOGRAFÍAS
 
-**Creación y entrada de cursos:**  
-![enterCourse](src/img/enterCourse.png)  
-![insertCourse](src/img/insertCourse.png)  
+**Creación y entrada de cursos por postman:**  
+![enterCourse](src/img/ingresarCurso.png)  
 
-**Consulta de cursos (antes y después de eliminación):**  
-![getCourse](src/img/getCourse.png)  
-![getCourse Post Delete](src/img/getCourse%20Post%20Delete.png)  
+**Creación y entrada de cursos por interfaz web:**  
+![insertCourse](src/img/insertCurso.png)  
 
-**Actualización de curso:**  
-![updateCourse](src/img/updateCourse.png)  
+**Consulta de cursos (antes y después de eliminación) :**  
+![getCourse](src/img/obtenerCurso.png)  
+![getCourse Post Delete](src/img/curso.png)  
 
-**Eliminación de curso:**  
-![deleteCourse](src/img/deleteCourse.png)  
+**Actualización de curso por postman:**  
+![updateCourse](src/img/actualizarCurso.png) 
+
+**Actualización de curso por interfaz web:**  
+![updateCourse](src/img/updateCurso.png) 
+
+**Eliminación de curso por postman:**  
+![deleteCourse](src/img/eliminarCurso.png)  
+
+**Eliminación de curso por interfaz web:**  
+![deleteCourse](src/img/deleteCurso.png)  
 
 **Interfaz de login:**  
 ![login](src/img/login.png)  
 
 **Registro de usuario:**  
 ![register](src/img/register.png)  
+
+**Vista detallada del curso en frontend React:**  
+![course](src/img/curso.png)  
 
 **Interfaz general de mongo-express:**  
 ![mongo-express](src/img/mongo-express.png)  
@@ -146,8 +157,7 @@ A continuación se presentan evidencias visuales que reflejan y validan cada fas
 **Vista adicional mongo-express:**  
 ![mongo-express3](src/img/mongo-express3.png)  
 
-**Vista detallada del curso en frontend React:**  
-![course](src/img/course.png)  
+
 
 ---
 

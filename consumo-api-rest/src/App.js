@@ -1,10 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import ListaCursos from './components/ListaCursos';
-import Register from './components/Register';
-import Login from './components/Login';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import Register from './components/Register';
+import Login from './components/Login';
+import ListaCursos from './components/ListaCursos';
 
 function App() {
   return (

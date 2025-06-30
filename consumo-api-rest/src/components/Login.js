@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { loginUser } from '../services/api';
 import { useNavigate } from 'react-router-dom';
+import './Forms.css';
+
 
 const Login = () => {
     const [formData, setFormData] = useState({ correo: '', pass: '' });
@@ -32,7 +34,12 @@ const Login = () => {
                 <button type="submit" className="btn insertar">Iniciar Sesión</button>
             </form>
             {error && <p className="error">{error}</p>}
+            <br></br>
+            <div className="link">
+                ¿No tienes una cuenta? <button onClick={() => navigate("/")} className="btn-link">Regístrate</button>
+            </div>
         </div>
+
     );
 };
 

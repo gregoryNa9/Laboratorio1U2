@@ -21,7 +21,7 @@ exports.register = async (req, res) => {
     });
 
     await newUser.save();
-    res.status(201).json({ message: "Usuario registrado correctamente" });
+    res.status(200).json({ message: "Usuario registrado correctamente" });
 };
 
 // Login de usuario

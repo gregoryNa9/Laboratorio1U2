@@ -158,7 +158,19 @@ const ListaCursos = () => {
                     </form>
                 </div>
             )}
+            <br>
+            </br>
+            <div className="btn-container">
+                <button className="btn cerrar" onClick={() => {
+                    localStorage.removeItem("userId");
+                    navigate("/login");
+                }}>
+                    Cerrar sesión
+                </button>
+            </div>
         </div>
+
+
     );
 };
 

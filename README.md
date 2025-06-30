@@ -114,6 +114,15 @@ A continuación se presentan evidencias visuales que reflejan y validan cada fas
 
 ## 6. GRÁFICOS O FOTOGRAFÍAS
 
+**Interfaz de login:**  
+![login](src/img/login.png)  
+
+**Registro de usuario:**  
+![register](src/img/register.png)  
+
+**Vista detallada del curso en frontend React:**  
+![course](src/img/curso.png)  
+
 **Creación y entrada de cursos por postman:**  
 ![enterCourse](src/img/ingresarCurso.png)  
 
@@ -135,15 +144,6 @@ A continuación se presentan evidencias visuales que reflejan y validan cada fas
 
 **Eliminación de curso por interfaz web:**  
 ![deleteCourse](src/img/deleteCurso.png)  
-
-**Interfaz de login:**  
-![login](src/img/login.png)  
-
-**Registro de usuario:**  
-![register](src/img/register.png)  
-
-**Vista detallada del curso en frontend React:**  
-![course](src/img/curso.png)  
 
 **Interfaz general de mongo-express:**  
 ![mongo-express](src/img/mongo-express.png)  

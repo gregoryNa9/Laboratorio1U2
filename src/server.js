@@ -1,18 +1,22 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors"); 
+const cors = require("cors");
 
 const courseRoutes = require("./routes/course.routes");
-const authRoutes = require("./routes/auth.routes"); 
+const authRoutes = require("./routes/auth.routes");
+const labRoutes = require("./routes/lab.routes");
+
 
 const app = express();
 
-app.use(cors()); 
+app.use(cors());
 
 app.use(express.json());
 app.use("/course", courseRoutes);
 app.use("/auth", authRoutes);
+app.use("/lab", labRoutes);
+
 
 app.get("/", (req, res) => {
   res.send("Hello, World!");

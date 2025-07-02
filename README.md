@@ -101,13 +101,18 @@ Durante el desarrollo y las pruebas, se obtuvieron resultados positivos que conf
 
 A continuación se presentan evidencias visuales que reflejan y validan cada fase del desarrollo, desde las operaciones realizadas con la API hasta la interacción con la base de datos y la interfaz de usuario.
 
+
+- `mongo-express.png`, `mongo-express1.png`, `mongo-express2.png`, `mongo-express3.png` y `mongo-express4.png` exhiben la interfaz y la gestión de la base de datos desde mongo-express.
+- `login.png` y `register.png` corresponden a las interfaces de autenticación y registro de usuarios.
+- `course.png` presenta la vista detallada de un curso en la interfaz React.
 - `enterCourse.png` y `insertCourse.png` muestran la creación de cursos mediante Postman.
 - `getCourse.png` y `getCourse Post Delete.png` evidencian la consulta de cursos antes y después de eliminar registros.
 - `updateCourse.png` muestra la actualización de un curso.
 - `deleteCourse.png` ilustra la eliminación de un curso.
-- `login.png` y `register.png` corresponden a las interfaces de autenticación y registro de usuarios.
-- `mongo-express.png`, `mongo-express1.png`, `mongo-express2.png` y `mongo-express3.png` exhiben la interfaz y la gestión de la base de datos desde mongo-express.
-- `course.png` presenta la vista detallada de un curso en la interfaz React.
+- `InsertLab.png` y `BotonIngresoLab.png` muestran el proceso de creación de un laboratorio.
+- `InterfazLab.png` representa la interfaz general para la gestión de laboratorios.
+- `EditarLab.png` muestra la edición de un laboratorio existente.
+- `DeleteLab.png` evidencia la eliminación de un laboratorio.
 
 ---
 ---
@@ -145,6 +150,21 @@ A continuación se presentan evidencias visuales que reflejan y validan cada fas
 **Eliminación de curso por interfaz web:**  
 ![deleteCourse](src/img/deleteCurso.png)  
 
+** Creación de Laboratorio  **
+![InsertLab](src/img/InsertLab.png)  
+
+** Botón de Ingreso a Laboratorios  **
+![BotonIngresoLab](src/img/BotonIngresoLab.png)  
+
+** Interfaz General para Gestión de Laboratorios  **
+![InterfazLab](src/img/InterfazLab.png)  
+
+** Edición de Laboratorio  **
+![EditarLab](src/img/EditarLab.png)  
+
+**Eliminación de Laboratorio  **
+![DeleteLab](src/img/DeleteLab.png)
+
 **Interfaz general de mongo-express:**  
 ![mongo-express](src/img/mongo-express.png)  
 
@@ -157,6 +177,8 @@ A continuación se presentan evidencias visuales que reflejan y validan cada fas
 **Vista adicional mongo-express:**  
 ![mongo-express3](src/img/mongo-express3.png)  
 
+**Vista adicional mongo-express:**  
+![mongo-express4](src/img/mongo-express4.png)
 
 
 ---

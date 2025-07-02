@@ -4,11 +4,11 @@ import './ListaCursos.css';
 import { useNavigate } from 'react-router-dom';
 
 const ListaCursos = () => {
-    const navigate = useNavigate();  // <-- aquí defines navigate
+    const navigate = useNavigate();
 
     useEffect(() => {
         const user = localStorage.getItem("userId");
-        if (!user) navigate("/login");  // <-- dentro del useEffect en componente
+        if (!user) navigate("/login");
     }, [navigate]);
 
     const [cursos, setCursos] = useState([]);
@@ -51,7 +51,7 @@ const ListaCursos = () => {
             title: curso.title,
             description: curso.description,
             numberOfTopics: curso.numberOfTopics,
-            publishedAt: curso.publishedAt?.split("T")[0] // formato yyyy-mm-dd
+            publishedAt: curso.publishedAt?.split("T")[0]
         });
         setEditId(curso._id);
         setFormVisible(true);
@@ -98,6 +98,15 @@ const ListaCursos = () => {
 
     return (
         <div className="contenedor">
+            <div className="btn-container">
+                <button className="btn insertar" onClick={() => {
+                    navigate("/laboratorio");
+                }}>
+                    Ingresar a Laboratorios
+                </button>
+            </div>
+            <br>
+            </br>
             <div className="btn-container">
                 <button className="btn insertar" onClick={handleAdd}>Insertar</button>
             </div>
@@ -158,8 +167,7 @@ const ListaCursos = () => {
                     </form>
                 </div>
             )}
-            <br>
-            </br>
+            <br />
             <div className="btn-container">
                 <button className="btn cerrar" onClick={() => {
                     localStorage.removeItem("userId");
@@ -169,8 +177,6 @@ const ListaCursos = () => {
                 </button>
             </div>
         </div>
-
-
     );
 };
 
